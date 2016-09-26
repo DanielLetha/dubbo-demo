@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-provider" owner="daniel" organization="st"/>
+
+    <dubbo:registry  address="zookeeper://192.168.2.22:2181" />
+
+
+    <dubbo:annotation package="com.daniel.study" />
+
+    <dubbo:protocol name="dubbo" serialization="kryo" />
+
+    <!--<dubbo:protocol name="rest" port="8888" threads="500" contextpath="services" server="tomcat" accepts="500"-->
+                    <!--extension="com.alibaba.dubbo.demo.extension.TraceInterceptor,-->
+                    <!--com.alibaba.dubbo.demo.extension.TraceFilter,-->
+                    <!--com.alibaba.dubbo.demo.extension.ClientTraceFilter,-->
+                    <!--com.alibaba.dubbo.demo.extension.DynamicTraceBinding,-->
+                    <!--com.alibaba.dubbo.demo.extension.CustomExceptionMapper,-->
+                    <!--com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>-->
+
+    <!--<dubbo:protocol name="http" port="8889"/>-->
+    <!--<dubbo:protocol name="hessian" port="8890"/>-->
+    <!--<dubbo:protocol name="webservice" port="8892"/>-->
+
+    <dubbo:service  interface="com.daniel.study.test.IHelloWorld" ref="helloWorld" protocol="dubbo" />
+
+    <bean id="helloWorld" class="com.daniel.study.testImp.HelloWorldImp" />
+</beans>
