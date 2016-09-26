@@ -1,6 +1,7 @@
 package com.daniel.study.testImp;
 
 import com.daniel.study.test.IHelloWorld;
+import org.springframework.stereotype.Service;
 
 /**
  * @Brief :  ${用途}
@@ -9,6 +10,7 @@ import com.daniel.study.test.IHelloWorld;
  * @Since ： ${VERSION}
  * @Remark: ${Remark}
  */
+@Service
 public class HelloWorldImp implements IHelloWorld {
 
     public String sayHello(String name) {
