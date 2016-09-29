@@ -9,7 +9,7 @@ package com.daniel.study.test;
  */
 public interface IHelloWorld {
 
-  public  String sayHello(String name);
+  public  String sayHello(String name) throws InterruptedException;
 
 
 

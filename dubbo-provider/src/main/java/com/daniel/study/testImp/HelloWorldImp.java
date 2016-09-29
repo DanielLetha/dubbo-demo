@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloWorldImp implements IHelloWorld {
 
-    public String sayHello(String name) {
+    public String sayHello(String name) throws InterruptedException {
+
         System.out.println("Hello ,"+name);
+        Thread.sleep(5000);
         return "Hello ," +name;
     }
 

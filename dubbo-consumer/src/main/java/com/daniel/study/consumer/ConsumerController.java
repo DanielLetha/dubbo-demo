@@ -25,7 +25,7 @@ public class ConsumerController {
 
     @RequestMapping(value = "sayHello/{name}",method = RequestMethod.GET)
     @ResponseBody
-    public String sayHello(@PathVariable String name){
+    public String sayHello(@PathVariable String name) throws Exception{
         return helloWorld.sayHello(name);
     }
 }

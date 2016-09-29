@@ -8,7 +8,7 @@
 
     <dubbo:application name="dubbo-provider" owner="daniel" organization="st"/>
 
-    <dubbo:registry  address="zookeeper://192.168.2.22:2181" />
+    <dubbo:registry  address="zookeeper://192.168.2.22:2181"  />
 
 
     <dubbo:annotation package="com.daniel.study" />
@@ -27,7 +27,7 @@
     <!--<dubbo:protocol name="hessian" port="8890"/>-->
     <!--<dubbo:protocol name="webservice" port="8892"/>-->
 
-    <dubbo:service  interface="com.daniel.study.test.IHelloWorld" ref="helloWorld" />
+    <dubbo:service  interface="com.daniel.study.test.IHelloWorld" ref="helloWorld"  retries="10"/>
 
-    <bean id="helloWorld" class="com.daniel.study.testImp.HelloWorldImp" />
+    <bean id="helloWorld" class="com.daniel.study.testImp.HelloWorldImp"  />
 </beans>
